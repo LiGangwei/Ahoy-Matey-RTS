@@ -9,8 +9,9 @@ public class Player : NetworkBehaviour {
 
 	// Update is called once per frame
 	void Update () {
-		if(isLocalPlayer) {
-			transform.position += new Vector3(CrossPlatformInputManager.GetAxis("Horizontal")*speed*Time.deltaTime, CrossPlatformInputManager.GetAxis("Vertical")*speed*Time.deltaTime, 0f);
+		if(!isLocalPlayer) {
+			return;
 		}
+		transform.Translate(new Vector3(CrossPlatformInputManager.GetAxis("Horizontal")*speed*Time.deltaTime, CrossPlatformInputManager.GetAxis("Vertical")*speed*Time.deltaTime, 0f));
 	}
 }

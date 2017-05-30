@@ -18,4 +18,8 @@ public class MyNetworkManager : NetworkManager {
 	public override void OnStartClient(NetworkClient myClient) {
 		Debug.Log("ClientStart requested at: " + Time.timeSinceLevelLoad);
 	}
+
+	public override void OnClientConnect(NetworkConnection conn) {
+		Debug.Log("Client connected to IP:" + conn.address +  " at: " + Time.timeSinceLevelLoad);
+	}
 }

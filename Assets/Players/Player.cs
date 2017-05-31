@@ -18,7 +18,7 @@ public class Player : NetworkBehaviour {
 	public override void OnStartLocalPlayer() {
 		if(transform.childCount <= 0) {
 			Debug.LogError("Missing child on player!");
-		} else if(transform.GetChild(0).gameObject.activeSelf == false) {
+		} else if(transform.GetChild(0).gameObject.activeSelf == true) {
 			Debug.LogError("Camera already active! Check prefab child active state.");
 		} else {
 			transform.GetChild(0).gameObject.SetActive(true);

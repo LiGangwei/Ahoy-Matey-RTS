@@ -7,7 +7,6 @@ using UnityEngine.Networking;
 public class Player : NetworkBehaviour {
 	public float speed = 10;
 
-	// Update is called once per frame
 	void Update () {
 		if(!isLocalPlayer) {
 			return;
